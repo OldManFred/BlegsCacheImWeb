@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <title>Blegscache</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: grey;
+            min-height: 100vh;
+            background:
+                linear-gradient(to bottom, rgba(3, 12, 6, 0.80), rgba(3, 12, 6, 0.20)),
+                url('/BackGroundLogo.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-top: 20px;
+            padding-left: 20px;
+            position: relative;
+
+        }
+
+        #kopf {
+            width: 90vw;
+            background-color: rgba(0,0,0,0);
+            text-align: center;
+            border-radius: 10px;
+            /*padding: 5px;
+            margin-bottom: 15px;*/
+            text-shadow: 5px 0px 8px #4db30e, 5px 2px 16px #4db30e, -5px 2px 16px #4db30e;
+        }
+
+        #textLinks {
+            position: absolute;
+            top: 60%;
+            left: 2%;
+            transform: translateY(-50%);
+            width: 25%;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0);
+            
+        }
+
+        #textRechts {
+            position: absolute;
+            top: 60%;
+            right: 2%;
+            transform: translateY(-50%);
+            width: 25%;
+            text-align: right;
+            background-color: rgba(0,0,0,0);
+        }
+
+        #Texte {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #255e01;
+            text-shadow: 2px 2px 8px #60f205;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kopf">
+        <!--
+     ╔══════════════════════════════════════════════════════╗
+     ║  SVG = eigener Vektor-Grafik-Bereich                  ║
+     ║  width/height = Größe des SVG-Containers              ║
+     ║  viewBox = das interne Koordinatensystem (x y Breite Höhe) ║
+     ╚══════════════════════════════════════════════════════╝ -->
+        <svg width="100%" height="150" viewBox="0 0 400 210">
+
+            <!-- defs = "Definitionen" – hier legen wir unsichtbare 
+         Hilfselemente an, die wir später referenzieren -->
+            <defs>
+                <!-- 
+            path = die eigentliche Kurve (unsichtbar, fill="transparent")
+            d = "Pfad-Daten", beschreibt die Linie:
+                M 50 100   → Start ("Move to") bei x=50, y=100
+                Q 200 20   → Kontrollpunkt der Kurve (zieht die Wölbung nach oben)
+                350 100    → Endpunkt der Kurve bei x=350, y=100
+            
+            Je kleiner die Y-Koordinate des Kontrollpunkts (hier 20),
+            desto stärker wölbt sich die Kurve nach oben.
+        -->
+                <path id="meineKurve" d="M 40 200 Q 180 50 370 203" fill="transparent" />
+            </defs>
+
+            <!-- text = der sichtbare Text
+         font-size = Schriftgröße in SVG-Einheiten
+         fill = Textfarbe (wie "color" in normalem CSS)
+         text-anchor="middle" = Text wird um den Mittelpunkt zentriert -->
+            <text font-size="32" letter-spacing="12" fill="#245206" text-anchor="middle">
+
+                <!-- textPath = sagt dem Text "folge dieser Kurve"
+             href="#meineKurve" = verweist auf den Pfad oben (per id)
+             startOffset="50%" = Text startet in der Mitte der Kurve -->
+                <textPath href="#meineKurve" startOffset="50%">
+                    Blegscache.de
+                </textPath>
+            </text>
+        </svg>
+    </div>
+    <div id="Texte">
+        <div id="textLinks">
+            Lieber Cacher,<br />
+            richtige Idee,<br /> falsches Netz.<br />
+            Vor Ort findes du das richtige Netz,
+            Und dort die richtige Seite.
+            Löse das Rätsel, gehe zum GZ,
+            tauche dort ins lokale Web, und surfe zu der
+            lokalen Seite. Dann bist du am Ziel.
+            Logge in beiden Logbüchern.
+        </div>
+
+        <div id="textRechts">
+            Dear Cacher,<br/>
+            right idea,<br/>
+            but wrong network.
+            Only on the real cache site you find the correct net,
+            so solve the puzzle, go to gz,
+            dive there in the right net, surf to the right site,
+            and you have archived your goal.
+            Log in both <br/>
+            logbooks.
+        </div>
+    </div>
+</body>
+
+</html>
