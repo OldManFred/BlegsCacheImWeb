@@ -10,7 +10,7 @@
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
             background:
-                linear-gradient(to right, rgba(3, 12, 6, 0.98),rgba(3, 12, 6, 0.90), rgba(3, 12, 6, 0.20)),
+                linear-gradient(to right, rgba(3, 12, 6, 0.98),rgba(3, 12, 6, 0.55), rgba(3, 12, 6, 0.85)),
                 url('BackGroundLogo.jpg') top center / 800px auto no-repeat; /*Oben Mitte ausrichtung 800px Breite, auto Höhe nicht wiederholt*/
                  background-color: black;
             display: flex;
@@ -26,12 +26,12 @@
             background-color: rgba(0,0,0,0);
             text-align: center;
             border-radius: 10px;
-            text-shadow: 5px 0px 8px #4db30e, 5px 2px 16px #4db30e, -5px 2px 16px #4db30e;
+            text-shadow: 5px 0px 5px #4db30e, 5px 2px 10px #4db30e, -5px 2px 10px #4db30e;
         }
 
         #textLinks {
             position: absolute;
-            top: 40%;
+            top: 30%;
             left: 2%;
             transform: translateY(-50%);
             width: 25%;
@@ -43,14 +43,14 @@
         }
          #Impressum {
             position: absolute;
-            top: 80%;
+            top: 85%;
             left: 2%;
             transform: translateY(-50%);
             width: 25%;
             max-width: 220px; 
             text-align: left;
             background-color: rgba(0, 0, 0, 0);
-            text-shadow 0 0 0;
+            text-shadow:none;
             
         }
         
@@ -66,7 +66,7 @@
 
         #textRechts {
             position: absolute;
-            top: 65%;
+            top: 80%;
             right: 2%;
             transform: translateY(-50%);
             width: 25%;
@@ -78,7 +78,7 @@
 
 
         #Texte {
-            font-size: 14px;
+            font-size: 12px;
             margin-top: 10px;
             color: #255e01;
             
@@ -117,7 +117,7 @@
          font-size = Schriftgröße in SVG-Einheiten
          fill = Textfarbe (wie "color" in normalem CSS)
          text-anchor="middle" = Text wird um den Mittelpunkt zentriert -->
-            <text font-size="32" letter-spacing="20" fill="#245206" text-anchor="middle">
+            <text font-size="32" letter-spacing="12" fill="#245206" text-anchor="middle">
 
                 <!-- textPath = sagt dem Text "folge dieser Kurve"
              href="#meineKurve" = verweist auf den Pfad oben (per id)
@@ -134,14 +134,20 @@
     </div>
     <div id="Texte">
         <div id="textLinks">
-            Lieber Cacher,<br />
-            richtige Idee,<br /> falsches Netz.<br />
-            Vor Ort findes du das richtige 'Netz',
-            Und dort die richtige Seite.
-            Löse das Rätsel, gehe zum GZ,
-            tauche dort ins lokale Web, und surfe zu der
-            lokalen Seite. Dann bist du am Ziel.
-            Logge in beiden Logbüchern.
+            Lieber Cacher,<br>
+            richtige Idee,<br>
+             falsches Netz.<br>
+            Vor Ort findes du das<br>
+            richtige 'Netz',<br>
+            Und dort die richtige Seite.<br>
+            Löse das Rätsel,<br>
+            gehe zum GZ,<br>
+            tauche dort ins lokale Web,<br>
+            und surfe zu der<br>
+            lokalen Seite.<br>
+            Dann bist du am Ziel.<br>
+            Du kannst in beiden<br>Logbüchern loggen,<br>
+            das ist aber keine Bedingung.<br>
         </div>
 
         <div id="textRechts">
@@ -157,20 +163,20 @@
             surf to the right site,<br/>
             and you have <br/>
             archived your goal.<br/>
-            Log in both <br/>
-            logbooks.<br/>
+            You can log in both logbooks<br/>
+            but that is volontary.<br/>
         </div>
         <div id="Impressum">
-            <h3>Impressum</h3>
+            <h2>Impressum</h2>
             
             Manfred K&uuml;hne<br/>
             Hausburgstrasse, 5<br />
             10249 Berlin</p>
 
-            <h3>Kontakt</h3>
+            <h2>Kontakt</h2>
             <p>Telefon: 017681502557<br />
             E-Mail: dl7utx@gmx.de</p>
-            <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+           
             <a href="datenschutz.html" id="datenschutzButton">Datenschutz</a>
         </div>
     </div>
