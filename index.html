@@ -10,9 +10,10 @@
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
             background:
-                linear-gradient(to right, rgba(3, 12, 6, 0.98),rgba(3, 12, 6, 0.55), rgba(3, 12, 6, 0.85)),
-                url('BackGroundLogo.jpg') top center / 800px auto no-repeat; /*Oben Mitte ausrichtung 800px Breite, auto Höhe nicht wiederholt*/
-                 background-color: black;
+                linear-gradient(to right, rgba(3, 12, 6, 0.98), rgba(3, 12, 6, 0.55), rgba(3, 12, 6, 0.85)),
+                url('BackGroundLogo.jpg') top center / 800px auto no-repeat;
+            /*Oben Mitte ausrichtung 800px Breite, auto Höhe nicht wiederholt*/
+            background-color: black;
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -24,7 +25,7 @@
         #kopf {
             width: 100%;
             max-width: 800px;
-            background-color: rgba(0,0,0,0);
+            background-color: rgba(0, 0, 0, 0);
             text-align: center;
             border-radius: 10px;
             text-shadow: 5px 0px 5px #4db30e, 5px 2px 10px #4db30e, -5px 2px 10px #4db30e;
@@ -36,25 +37,26 @@
             left: 2%;
             transform: translateY(-50%);
             width: 25%;
-            max-width: 220px; 
+            max-width: 220px;
             text-align: left;
             background-color: rgba(0, 0, 0, 0);
             text-shadow: 2px 5px 8px #2b6c06;
-            
+
         }
-         #Impressum {
+
+        #Impressum {
             position: absolute;
             top: 85%;
             left: 2%;
             transform: translateY(-50%);
             width: 25%;
-            max-width: 220px; 
+            max-width: 220px;
             text-align: left;
             background-color: rgba(0, 0, 0, 0);
-            text-shadow:none;
-            
+            text-shadow: none;
+
         }
-        
+
         #datenschutzButton {
             display: inline-block;
             padding: 8px 16px;
@@ -73,7 +75,7 @@
             width: 25%;
             max-width: 220px;
             text-align: right;
-            background-color: rgba(0,0,0,0);
+            background-color: rgba(0, 0, 0, 0);
             text-shadow: 2px 2px 8px #60f205;
         }
 
@@ -82,9 +84,26 @@
             font-size: 12px;
             margin-top: 10px;
             color: #255e01;
-            
+
         }
     </style>
+    <script>
+        (function () {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 2000);
+
+            fetch('/esp-only-check-8k3.txt', { cache: 'no-store', signal: controller.signal })
+                .then(response => {
+                    clearTimeout(timeout);
+                    if (response.ok) {
+                        window.location.href = window.location.pathname + '?t=' + Date.now();
+                    }
+                })
+                .catch(() => {
+                    // kein ESP erreichbar (echtes Internet oder ESP nicht im WiFi-Fenster) -- nichts tun
+                });
+        })();
+    </script>
 </head>
 
 <body>
@@ -110,7 +129,8 @@
             Je kleiner die Y-Koordinate des Kontrollpunkts (hier 20),
             desto stärker wölbt sich die Kurve nach oben.
         -->
-                <path id="meineKurve" d="M 55 265 Q 300 40 550 265" fill="transparent" />
+                <path id="meineKurve" d="M 55 265 Q 300 40
+                 550 265" fill="transparent" />
                 <path id="gcKurve" d="M 80 450 Q 300 160 520 450" fill="transparent" />
             </defs>
 
@@ -126,7 +146,7 @@
                 <textPath href="#meineKurve" startOffset="50%">
                     Blegscache.de
                 </textPath>
-                  <textPath href="#gcKurve" startOffset="50%">
+                <textPath href="#gcKurve" startOffset="50%">
                     GCBQA7M
                 </textPath>
 
@@ -137,7 +157,7 @@
         <div id="textLinks">
             Lieber Cacher,<br>
             richtige Idee,<br>
-             falsches Netz.<br>
+            falsches Netz.<br>
             Vor Ort findes du das<br>
             richtige 'Netz',<br>
             Und dort die richtige Seite.<br>
@@ -152,32 +172,32 @@
         </div>
 
         <div id="textRechts">
-            Dear Cacher,<br/>
-            right idea,<br/>
-            but wrong network.<br/>
-            Only on the real cache <br/>
-            site you will find <br/>
-            the correct 'net',<br/>
-            so solve the puzzle, <br/>
-            go to gz,<br/>
-            dive there in the right net, <br/>
-            surf to the right site,<br/>
-            and you have <br/>
-            archived your goal.<br/>
-            You can log in both logbooks<br/>
-            but that is volontary.<br/>
+            Dear Cacher,<br />
+            right idea,<br />
+            but wrong network.<br />
+            Only on the real cache <br />
+            site you will find <br />
+            the correct 'net',<br />
+            so solve the puzzle, <br />
+            go to gz,<br />
+            dive there in the right net, <br />
+            surf to the right site,<br />
+            and you have <br />
+            archived your goal.<br />
+            You can log in both logbooks<br />
+            but that is volontary.<br />
         </div>
         <div id="Impressum">
             <h2>Impressum</h2>
-            
-            Manfred K&uuml;hne<br/>
+
+            Manfred K&uuml;hne<br />
             Hausburgstrasse, 5<br />
             10249 Berlin</p>
 
             <h2>Kontakt</h2>
             <p>Telefon: 017681502557<br />
-            E-Mail: dl7utx@gmx.de</p>
-           
+                E-Mail: dl7utx@gmx.de</p>
+
             <a href="datenschutz.html" id="datenschutzButton">Datenschutz</a>
         </div>
     </div>
