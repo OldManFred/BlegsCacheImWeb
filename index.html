@@ -14,7 +14,7 @@
             font-family: 'Roboto', sans-serif;
             min-height: 100vh;
             background:
-                linear-gradient(to right, rgba(3, 12, 6, 0.98), rgba(3, 12, 6, 0.55), rgba(3, 12, 6, 0.85)),
+                linear-gradient(to right, rgba(3, 12, 6, 0.98), rgba(3, 12, 6, 0.55), rgba(3, 12, 6, 0.98)),
                 url('BackGroundLogo.jpg') top center / 800px auto no-repeat;
             /*Oben Mitte ausrichtung 800px Breite, auto Höhe nicht wiederholt*/
             background-color: black;
@@ -50,9 +50,8 @@
 
         #Impressum {
             position: absolute;
-            top: 85%;
+            bottom: 12px;
             left: 2%;
-            transform: translateY(-50%);
             width: 25%;
             max-width: 220px;
             text-align: left;
@@ -80,12 +79,12 @@
             max-width: 220px;
             text-align: right;
             background-color: rgba(0, 0, 0, 0);
-            text-shadow: 2px 2px 8px #60f205;
+            text-shadow: 2px 5px 8px #2b6509;
         }
 
 
         #Texte {
-            font-size: 10px;
+            font-size: clamp(9px,1.8vh, 12px); //min 9px, max 12px, scale with viewport height
             margin-top: 10px;
             color: #255e01;
 
