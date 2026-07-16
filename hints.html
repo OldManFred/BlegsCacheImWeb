@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hints zum Cache</title>
+    <style>
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+        }
+
+
+        h2 {
+            color: #555;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+
+        #buttons {
+            /*Elternelement div-Container */
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 20px 10px;
+
+
+        }
+
+        .button {
+            /*beide Button als Klasse*/
+            padding: 20px 20px;
+            border-style: solid;
+            text-decoration: none;
+            border-radius: 8px;
+
+        }
+
+        #Zurückbutton {
+            /*ein Button */
+            background-color: #f0f0f0;
+            color: #102403;
+        }
+
+        #datenschutzButton {
+            /*ein Button */
+            background-color: #245206;
+            color: #e8f5e0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p> Ein paar Tips zu Problemen vor Ort:
+    </p>
+
+    <p> Da diese Seite hier auch als https: ausgeliefert wird,die lokale isolierte Seite vor Ort aber nur als http: ,
+        stellen sich Browser manchmal stur. <br />
+        "err_connection_refused, nicht gefunden, Du bist offline...."<br />
+        Es hilft, einen anderen Browser zu versuchen, DuckDuckGo ist ziemlich unkritisch. Auch das Löschen des
+        Browsercaches ist eine Möglichkeit.
+        Oder hänge einfach eine andere TLD (Top Level Domain) an den Namen,
+        denk dir eine aus, .fo oder was du möchtest.
+        Als Fallback, sollte immer gehen:</p>
+
+    <h2>192.168.4.1/page</h2><br />
+    
+    <p>
+        Nicht das Frust aufkommt.
+    </p>
+
+    <div id="buttons">
+        <a href="index.html" class="button" id="Zurückbutton">&lt;&lt;&lt; Zurück</a>
+        <a href="datenschutz.html" class="button" id="datenschutzButton">Datenschutz</a>
+    </div>
+</body>
+
+</html>
